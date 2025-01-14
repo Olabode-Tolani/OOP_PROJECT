@@ -16,6 +16,9 @@ public:
     
     void printDetails() const{};
     double calculateLateFees(int daysOverdue) const{};
+    
+    std::string getAuthor() const;
+    std::string getISBN() const;
 };
 
 #endif
