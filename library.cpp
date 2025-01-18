@@ -13,9 +13,9 @@ void Library::addPatron(const Patron& patron) {
 }
 
 // Borrow a book
-bool Library::borrowBook(const std::string& isbn, const std::string& patronCardNumber) {
+bool Library::borrowBook(const std::string& ISBN, const std::string& patronCardNumber) {
     auto bookIt = std::find_if(books.begin(), books.end(),
-                               [&isbn](const BookItem& book) { return book.getISBN() == isbn; });
+                               [&ISBN](const BookItem& book) { return book.getISBN() == ISBN; });
 
     auto patronIt = std::find_if(patrons.begin(), patrons.end(),
                                  [&patronCardNumber](const Patron& patron) {
@@ -32,9 +32,9 @@ bool Library::borrowBook(const std::string& isbn, const std::string& patronCardN
 }
 
 // Return a book
-bool Library::returnBook(const std::string& isbn, const std::string& patronCardNumber) {
+bool Library::returnBook(const std::string& ISBN, const std::string& patronCardNumber) {
     auto bookIt = std::find_if(books.begin(), books.end(),
-                               [&isbn](const BookItem& book) { return book.getISBN() == isbn; });
+                               [&ISBN](const BookItem& book) { return book.getISBN() == ISBN; });
 
     if (bookIt != books.end() && bookIt->getIsCheckedOut()) {
         bookIt->returnItem();
@@ -68,7 +68,7 @@ std::vector<BookItem> Library::searchBooksByAuthor(const std::string& author) co
 }
 
 // Check if a book is available
-bool Library::isBookAvailable(const std::string& isbn) const {
+bool Library::isBookAvailable(const std::string& ISBN) const {
     for (const auto& book : books) {
         if (book.getISBN() == isbn && !book.getIsCheckedOut()) {
             return true;
@@ -78,9 +78,9 @@ bool Library::isBookAvailable(const std::string& isbn) const {
 }
 
 // Reserve a book
-bool Library::reserveBook(const std::string& isbn, const std::string& patronCardNumber) {
+bool Library::reserveBook(const std::string& ISBN, const std::string& patronCardNumber) {
     auto bookIt = std::find_if(books.begin(), books.end(),
-                               [&isbn](const BookItem& book) { return book.getISBN() == isbn; });
+                               [&ISBN](const BookItem& book) { return book.getISBN() == ISBN; });
 
     if (bookIt != books.end() && !bookIt->getIsCheckedOut()) {
         bookIt->checkOut(); // Simulating reservation

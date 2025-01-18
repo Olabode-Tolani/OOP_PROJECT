@@ -6,7 +6,7 @@ void PatronRecord::addBook(const BookItem& book) {
 }
 
 // Remove a book from the record
-void PatronRecord::removeBook(const int& ISBN) {
+void PatronRecord::removeBook(const std::string& ISBN) {
     checkedOutBooks.erase(std::remove_if(checkedOutBooks.begin(), checkedOutBooks.end(),
         [&ISBN](const BookItem& book) { return book.getISBN() == ISBN; }),
         checkedOutBooks.end());
