@@ -5,32 +5,39 @@
 
 class LibraryItem {
 private:
-    std::string title;        
+    std::string title;  
+    std::string ISBN;     
+    std::string author;
     bool isCheckedOut;        
     int dueDate;     
 
 public:
     
-    LibraryItem(const std::string& title){};
-
+    LibraryItem(const std::string& title,const std::string& author, const std::string& ISBN){};
+     
+    std::string getTitle() const{return title;};
+    bool getIsCheckedOut() const{return isCheckedOut;};
+    int getDueDate() const{return dueDate;};
+    std::string getISBN() const{return ISBN;};
+    std::string getAuthor() const{return author;};
     
-    std::string getTitle() const{};
-    bool getIsCheckedOut() const{};
-    int getDueDate() const{};
-
+    void setTitle(const std::string& title){this->title =title;};
+    void setIsCheckedOut(bool status){isCheckedOut = status;};
+    void setDueDate(const int& dueDate){this->dueDate = dueDate; };
+    void setISBN(const std::string& ISBN){this->ISBN = ISBN; };
+    void setAuthor(const std::string& author){this-> author= author; };
     
-    void setTitle(const std::string& title){};
-    void setIsCheckedOut(bool status){};
-    void setDueDate(const int& dueDate){};
-
+    
     
     virtual void checkOut(){};
     virtual void returnItem(){};
     virtual void renewItem(int extraDays){};
     virtual void markAsLost(){};
+    virtual void printDetails() const=0;
+    virtual int calculateLateFees(int daysOverdue) const=0;
 
 
-    virtual ~LibraryItem() = default;
+    virtual ~LibraryItem() {};
 };
 
 #endif
