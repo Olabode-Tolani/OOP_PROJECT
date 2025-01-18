@@ -2,8 +2,10 @@
 
 
 // Constructor
-BookItem::BookItem(const std::string& title, const std::string& author, const int& ISBN)
+BookItem::BookItem(const std::string& title, const std::string& author, const std::string& ISBN)
     : LibraryItem(title), author(author), ISBN(ISBN) {}
+
+BookItem::author(author){}
 
 // Getters
 std::string BookItem::getAuthor() const { return author; }
