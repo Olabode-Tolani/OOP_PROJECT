@@ -8,12 +8,13 @@ private:
     std::string name;
     int libraryCardNumber;
 
+
 public:
-    Patron(const std::string& name, const std::string& libraryCardNumber){};
-    std::string getName() const{};
-    int getLibraryCardNumber() const{};
+    Patron(const std::string& name, const int& libraryCardNumber){};
+    std::string getName() const{return name;};
+    int getLibraryCardNumber() const{return libraryCardNumber;};
     void updateContactInfo(const std::string& newContactInfo){};
-    bool canBorrowMoreBooks(int currentBorrowedCount, int maxLimit) const{};
+    void canBorrowMoreBooks(const int currentBorrowedCount, const int maxLimit) const {};
 };
 
 #endif

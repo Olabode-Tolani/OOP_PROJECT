@@ -15,8 +15,8 @@ private:
 public:
     void addBook(const BookItem& book){};
     void addPatron(const Patron& patron){};
-    void borrowBook(const int& ISBN, const int& patronCardNumber){};
-    void returnBook(const int& ISBN, const int& patronCardNumber){};
+    void borrowBook(const std::string& ISBN, const int& patronCardNumber){};
+    void returnBook(const std::string& ISBN, const int& patronCardNumber){};
     void listOverdueBooks() const{};
     void notifyPatronsWithOverdueBooks() const{};
     void generateLibraryReport() const{};

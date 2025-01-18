@@ -10,11 +10,11 @@ private:
 
 public:
     void addBook(const BookItem& book){};
-    void removeBook(const int ISBN){};
+    void removeBook(const std::string& ISBN){};
     void listCheckedOutBooks() const{};
-    int getBorrowedBookCount() const{};
-    bool hasOverdueBooks() const{};
-    double calculateTotalLateFees() const{};
+    void getBorrowedBookCount()const{};
+    void  hasOverdueBooks() const{};
+    void calculateLateFees() const{};
 };
 
 #endif
