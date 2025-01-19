@@ -6,15 +6,23 @@
 class Patron {
 private:
     std::string name;
-    int libraryCardNumber;
-
+    std::string libraryCardNumber;
+    std::string contactInfo;
 
 public:
-    Patron(const std::string& name, const int& libraryCardNumber){};
-    std::string getName() const{return name;};
-    int getLibraryCardNumber() const{return libraryCardNumber;};
-    void updateContactInfo(const std::string& newContactInfo){};
-    void canBorrowMoreBooks(const int currentBorrowedCount, const int maxLimit) const {};
+    // Constructor
+    Patron(const std::string& name, const std::string& libraryCardNumber);
+
+    // Getters
+    std::string getName() const;
+    std::string getLibraryCardNumber() const;
+
+    // Setters
+    void setContactInfo(const std::string& contactInfo);
+
+    
+    void updateContactInfo(const std::string& newContactInfo);
+    bool canBorrowMoreBooks(int currentBorrowedCount, int maxLimit) const;
 };
 
 #endif

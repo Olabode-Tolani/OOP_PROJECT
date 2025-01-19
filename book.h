@@ -7,17 +7,21 @@ class Book {
 private:
     std::string title;
     std::string author;
-    std::string ISBN;
+    std::string isbn;
 
 public:
-    Book(const std::string& title, const std::string& author, const std::string& ISBN){};
-    std::string getTitle() const{};
-    std::string getAuthor() const{};
-    int  getISBN() const{};
-    void setTitle(const std::string& title){};
-    void setAuthor(const std::string& author){};
-    void setISBN(const std::string& ISBN){};
+    // Constructor
+    Book(const std::string& title, const std::string& author, const std::string& isbn);
+
+    // Getters
+    std::string getTitle() const;
+    std::string getAuthor() const;
+    std::string getISBN() const;
+
+    // Setters
+    void setTitle(const std::string& title);
+    void setAuthor(const std::string& author);
+    void setISBN(const std::string& isbn);
 };
 
-#endif
-
+#endif // BOOK_H
