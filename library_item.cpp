@@ -1,27 +1,42 @@
 #include "library_item.h"
 
-LibraryItem::LibraryItem(const std::string& title, const std::string& author,const std::string& ISBN)
-    : title(title), author(author),isCheckedOut(false), dueDate(0),ISBN(ISBN) {}
+// Constructor
+LibraryItem::LibraryItem(const std::string& title)
+    : title(title), isCheckedOut(false), dueDate("") {}
 
-std::string LibraryItem::getTitle() const { 
-    return title; 
-}
-void LibraryItem::setDueDate(const int& dueDate) { 
-    this->dueDate = dueDate; 
+// Destructor
+LibraryItem::~LibraryItem() {}
+
+// Function to mark the item as lost
+void LibraryItem::markAsLost() {
+    isCheckedOut = true;  // This marks the item as unavailable
+    dueDate = "Lost";     // This sets due date to "Lost"
 }
 
-bool LibraryItem::getIsCheckedOut() const { 
+// Function to check out the item
+void LibraryItem::checkOut(const std::string& dueDate) {
+    isCheckedOut = true;
+    this->dueDate = dueDate;
+}
+
+// Function to return the item
+void LibraryItem::returnItem() {
+    isCheckedOut = false;
+    dueDate = "";
+}
+
+// Function to renew the item
+void LibraryItem::renewItem(int extraDays) {
+    // This code tends to extend due date by extraDays
+    dueDate = "Renewed for " + std::to_string(extraDays) + " days";
+}
+
+// Getters
+std::string LibraryItem::getTitle() const {
+    return title;
+}
+
+bool LibraryItem::getIsCheckedOut() const {
     return isCheckedOut;
 }
-int LibraryItem::getDueDate() const { 
-    return dueDate; 
-}
 
-// Methods
-void LibraryItem::checkOut() { isCheckedOut = true; }
-void LibraryItem::returnItem() { isCheckedOut = false; }
-void LibraryItem::renewItem(int extraDays) 
-void LibraryItem::markAsLost() { isCheckedOut = false; }
-
-LibraryItem::LibraryItem(std::string title){}
-LibraryItem::author(std::string){}
