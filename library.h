@@ -1,7 +1,8 @@
-#ifndef LIBRARY_H
+ifndef LIBRARY_H
 #define LIBRARY_H
 
 #include <vector>
+#include <string>
 #include "book_item.h"
 #include "patron.h"
 #include "patron_record.h"
@@ -13,12 +14,18 @@ private:
     std::vector<PatronRecord> patronRecords;
 
 public:
-    void addBook(const BookItem& book){};
-    void addPatron(const Patron& patron){};
-    void borrowBook(const std::string& ISBN, const int& patronCardNumber){};
-    void returnBook(const std::string& ISBN, const int& patronCardNumber){};
-    void listOverdueBooks() const{};
-    void notifyPatronsWithOverdueBooks() const{};
-    void generateLibraryReport() const{};
+    // Declaration of the function to add books and patrons
+    void addBook(const BookItem& book);
+    void addPatron(const Patron& patron);
+
+    // Declaration of the function to borrow and return books
+    void borrowBook(const std::string& isbn, const std::string& patronCardNumber);
+    void returnBook(const std::string& isbn, const std::string& patronCardNumber);
+
+    // Declaration of the search functionalities
+    void searchBooksByTitle(const std::string& title) const;
+    void searchBooksByAuthor(const std::string& author) const;
+    void searchPatronByName(const std::string& name) const;
 };
-#endif
+
+#endif // LIBRARY_H
