@@ -1,4 +1,4 @@
-#include "../include/book.h"
+#include "book.h"
 
 // Constructor
 Book::Book(const std::string& title, const std::string& author, const std::string& isbn)

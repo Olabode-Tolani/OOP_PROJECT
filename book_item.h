@@ -1,4 +1,4 @@
-ifndef BOOK_ITEM_H
+#ifndef BOOK_ITEM_H
 #define BOOK_ITEM_H
 
 #include "library_item.h"

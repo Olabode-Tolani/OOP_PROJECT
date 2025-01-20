@@ -64,6 +64,6 @@ int main() {
 }
 
 
-// code to compile the program: g++ -std=c++11 -I./include main.cpp book_item.cpp patron.cpp library_item.cpp patron_record.cpp  library.cpp -o library_system;
+// code to compile the program: cl-std=c++11 -I./include main.cpp book_item.cpp patron.cpp library_item.cpp patron_record.cpp  library.cpp -o library_system;
 
-// code to run the program: ./library.exe
+// code to run the program: ./library_system.exe
